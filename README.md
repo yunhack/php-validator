@@ -1,4 +1,4 @@
-# QPhalcon Framework (q-phalcon)
+# PHP-Validator (yunhack/php-validator)
 
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -6,38 +6,36 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-**Note:** ```PHP``` ```Phalcon``` ```Framework```
+**Note:** ```PHP``` ```parameter check``` ```file check``` ```validation```
 
 
 
 
 # summary
-　　这是一个基于Phalcon的高性能PHP框架，简称QP！
-Phalcon是PHP的一个C扩展，虽然它不约束项目结构，但对于团队来说，没有规范，不成方圆！
-而QP是长期开发经验的结晶，它规范了项目结构，统一开发风格，为多人协作、系统升级和维护带来极大的好处！
+　　这是一个基于PHP 5.6以上版本的参数校验组件，作者 Qvil_Young 在使用Laravel的Validation组件后，发现其有BUG或用法不便利之处...
+因此决定自己开发一个好用的组件
 
-###### 以下是QP的特性：
+　　v0.0.1版本不支持数据库的唯一索引校验，后期如有需要，会迭代更新...
 
-  * 支持Composer，您可以方便的添加第三方组件到项目中
-  * 支持更强大的命名空间定义，加上强大的Composer工具，灵活适应特殊项目
-  * 扩展了Phalcon框架的路由，支持模块开发
-  * 增强异常处理，调试更加容易
-  * 规范配置路径，更容易的使用配置参数
-  * 规范日志路径和内容，写日志更方便
-  * 支持不同类型的多个数据库连接(包括Redis)，操作数据库更方便
-  * 支持中间件
-  * QP强力推荐使用Redis数据库存储会话
+　　v0.0.1版本不支持数据库的唯一索引校验，后期如有需要，会迭代更新...
 
+###### 以下是php-validator组件的特性：
 
-　　整个QP框架只有 100KB 左右，如果您想了解QP的设计思想，完全可以轻松阅读所有源码！
-你可以这么理解什么是QP框架：因为Phalcon不限制项目结构，不利于新手使用。因此QP就是为PHP新手搭建Phalcon项目结构，增强Phalcon功能的。
-在QP框架中，您必须要阅读QP基础文档，在实践开发中，您依然需要翻阅大量Phalcon官方文档和活跃在Phalcon社区！
+  * 只需传入文件的参数名，即可进行文件大小、类型的校验
+  * 在规则中添加变量类型和别名，通过校验过会转换数据类型和改变参数名
+  * 准确校验PHP的各种数据类型、以及字符串形式的数据类型
+  * 支持各种各样的字符串校验，如：字母、数字、字符组合，还有ip,url,email,mobile(中国地区)的校验
+  * 支持多个参数之间非空的相关联性校验，空的定义如下：空数组、空字符串、NULL、变量不存在，而不包括 "0",0,false...
+  * 准确判断数值大小和长度大小
+  * 支持字符串形式的一维数组校验，比如："[1,2,3,4]"，并且将其转成PHP数组，数组中的元素也可以指定数据类型
+  * 支持浮点数的精度控制
+  * 支持多国语言、其lang.php文件可以放在项目的任意位置(通过简单的配置即可实现)
 
 ###### 以下是QP v1.0.0 版本功能上不足之处：
 
   * QP文档正在编写中...
-  * 定时任务和脚本模块正在开发中...
-  * 用户自定义异常处理模块正在考虑有没有必要开发？希望广大粉丝留言反馈...
+  * 可能存在BUG，因为没有经过严格测试
+  * 数据库接口尚未开放
 
 
 
@@ -49,15 +47,10 @@ Phalcon是PHP的一个C扩展，虽然它不约束项目结构，但对于团队
 Via Composer
 
 ``` bash
-$ composer create-project q-phalcon/q-phalcon My_Project_Name
+$ composer require yunhack/q-phalcon
 ```
 
-You must be add php extension of phalcon to php configure file(php.ini)
-[How to install phalcon][link-Download_Phalcon]
 
-If you use the Redis database, You must be add php extension of redis to php configure file.
-[Download Redis for linux][link-Download_Redis]
-Of course,the PHP extension of Redis on windows system has been provide! please search by youself!
 
 
 # Document
@@ -103,12 +96,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 
 
-[ico-version]: https://img.shields.io/packagist/v/q-phalcon/q-phalcon.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/yunhack/php-validator.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/q-phalcon/q-phalcon.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/yunhack/php-validator.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/q-phalcon/q-phalcon
-[link-downloads]: https://packagist.org/packages/q-phalcon/q-phalcon
+[link-packagist]: https://packagist.org/packages/yunhack/php-validator
+[link-downloads]: https://packagist.org/packages/yunhack/php-validator
 [link-author]: https://github.com/Qvil-Young
 [link-contributors]: ../../contributors
 [link-Download_Phalcon]: https://phalconphp.com/en/download
